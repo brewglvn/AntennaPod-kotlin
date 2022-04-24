@@ -9,15 +9,18 @@ import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.joanzapata.iconify.fonts.MaterialModule;
 
+import org.greenrobot.eventbus.EventBus;
+
+import dagger.hilt.android.HiltAndroidApp;
 import de.danoeh.antennapod.activity.SplashActivity;
 import de.danoeh.antennapod.core.ApCoreEventBusIndex;
 import de.danoeh.antennapod.core.ClientConfig;
 import de.danoeh.antennapod.error.CrashReportWriter;
 import de.danoeh.antennapod.error.RxJavaErrorHandlerSetup;
 import de.danoeh.antennapod.spa.SPAUtil;
-import org.greenrobot.eventbus.EventBus;
 
 /** Main application class. */
+@HiltAndroidApp
 public class PodcastApp extends Application {
 
     // make sure that ClientConfigurator executes its static code

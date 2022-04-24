@@ -1,13 +1,29 @@
 buildscript {
+    ext.kotlin_version = '1.6.20'
+    ext.nav_version = "2.3.5"
+    ext.build_gradle = "7.0.1"
+    ext.hilt_version = '2.38.1'
+    ext.placeholders = '0.4'
+    ext.google_services = '4.3.10'
+    ext.firebase_crashlytics_gradle = '2.7.1'
+
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath "com.android.tools.build:gradle:$build_gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "de.timfreiheit.resourceplaceholders:placeholders:$placeholders"
+        classpath "com.google.gms:google-services:$google_services"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebase_crashlytics_gradle"
+
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:3.0.1'
-        classpath 'de.timfreiheit.resourceplaceholders:placeholders:0.4'
         classpath "gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.0"
         classpath 'org.codehaus.groovy:groovy-xml:3.0.9'
     }
@@ -18,6 +34,7 @@ allprojects {
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
+        jcenter()
     }
 }
 
@@ -81,6 +98,7 @@ project.ext {
     rulesVersion = "1.2.0"
 
     //room
+    hilt_version = "2.41"
     room_version = "2.4.2"
 }
 
